@@ -1,0 +1,34 @@
+class Solution {
+    public void rotate(int[] nums, int k) {
+        Reversal_Array(nums ,k);
+    }
+    public static void Reversal_Array(int [] arr, int k){
+        int n=arr.length;
+        k=k%n;
+        int i=n-k;
+        int j=n-1;
+        while(i<j){
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            i++;
+            j--;
+        }
+        int a=0,b=n-k-1;
+        while(a<b){
+            int temp1=arr[a];
+            arr[a]=arr[b];
+            arr[b]=temp1;
+            a++;
+            b--;
+        }
+        int c=0, l=n-1;
+        while(c<l){
+            int temp2=arr[c];
+            arr[c]=arr[l];
+            arr[l]=temp2;
+            c++;
+            l--;
+        }
+    }
+}
