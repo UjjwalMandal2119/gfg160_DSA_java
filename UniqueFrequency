@@ -1,0 +1,29 @@
+class Solution {
+    public int firstUniqueFreq(int[] nums) {
+     //this question require two hashmap one count the frequency of each element and 
+        //second one where we count the frequency how many same frequency occur
+        // we return the first element which frequency is unique.
+
+        //step 1: Count the frequency of each number
+        Map<Integer, Integer> numsFreq = new LinkedHashMap<>();
+        for(int num: nums){
+            numsFreq.put(num, numsFreq.getOrDefault(num,0) + 1);
+        }
+        //Step 2: Count how many times each frequency occurs
+
+        Map<Integer, Integer> freqCount = new HashMap<>();
+        for(int freq : numsFreq.values()){
+            freqCount.put(freq, freqCount.getOrDefault(freq,0) + 1);
+        }
+        //step3: Scan from left to right to find the first unique frequency
+        // we use the original array to maintain "left to rigth" order
+
+        for(int num: nums){
+            int currentFreq = numsFreq.get(num);
+            if(freqCount.get(currentFreq) == 1){
+                return num;
+            }
+        }
+        return -1;
+    }
+}©leetcode
