@@ -1,0 +1,16 @@
+class Solution {
+    public int minOperations(String s) {
+        int startwithZero =0;
+        int startwithOne =0;
+        for(int i =0; i<s.length(); i++){
+            if(i%2==0){
+                if(s.charAt(i)!='0') startwithZero++;
+                if(s.charAt(i)!='1') startwithOne++;
+            }else{
+                if(s.charAt(i)!='1') startwithZero++;
+                if(s.charAt(i)!='0') startwithOne++;
+            }
+        }
+        return Math.min(startwithZero, startwithOne);
+    }
+}
