@@ -1,0 +1,14 @@
+class Solution {
+    public int minimumIndex(int[] arr, int k) {
+        int min= Integer.MAX_VALUE;
+        int index=-1;
+        for(int i=0 ; i<arr.length; i++){
+            if(arr[i]>=k && arr[i]<min){
+                min=arr[i];
+                index=i;
+            }
+            
+        }
+        return index;
+    }
+}©leetcode
