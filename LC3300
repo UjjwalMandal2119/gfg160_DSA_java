@@ -1,0 +1,23 @@
+class Solution {
+    public int minElement(int[] nums) {
+        int min=Integer.MAX_VALUE;
+        int [] res=new int[nums.length];
+        for(int i=0; i<nums.length; i++){
+            res[i]=sum(nums[i]);
+        }
+        for(int i=0; i<res.length; i++){
+            min=Math.min(min, res[i]);
+        }
+        return min;
+      
+    }
+      public static int sum(int n){
+            int res=0;
+            while(n>0){
+                int r=n%10;
+                res+=r;
+                n=n/10;
+            }
+            return res;
+      }
+}
