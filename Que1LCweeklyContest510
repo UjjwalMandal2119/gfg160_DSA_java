@@ -1,0 +1,29 @@
+class Solution {
+    public int secondsBetweenTimes(String startTime, String endTime) {
+        int start=Second(startTime);
+        int end=Second(endTime);
+
+        return end-start;
+        
+    }
+    public static int Second(String str){
+        String h="";
+        String m="";
+        String s="";
+        for(int i=0; i<=1; i++){
+            h=h+str.charAt(i);
+        }
+        for(int i=3; i<=4; i++){
+            m=m+str.charAt(i);
+        }
+        for(int i=6; i<=7; i++){
+            s=s+str.charAt(i);
+        }
+        int hr=Integer.parseInt(h);
+        int mn=Integer.parseInt(m);
+        int se=Integer.parseInt(s);
+
+        int seconds=hr*60*60 +mn*60 +se;
+        return seconds;
+    }
+}©leetcode
